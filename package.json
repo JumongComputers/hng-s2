@@ -1,0 +1,33 @@
+{
+  "name": "hng-stage-two",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+   "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "clean": "tsc --build --clean",
+    "start:dev": "concurrently \"tsc -w\" \"nodemon -q dist/index.js \"",
+    "start:prod": " export NODE_ENV=production && node dist/index.js",
+    "prestart": "npm run build",
+
+    "lint": "eslint src/**/*.ts",
+    "format": "eslint src/**/*.ts --fix",
+    "test": "jest",
+    "audit": "npm audit fix --dry-run --json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "express": "^4.19.2",
+    "nodemon": "^3.1.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.2"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2"
+  }
+}
